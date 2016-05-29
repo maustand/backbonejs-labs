@@ -8,7 +8,9 @@ $(function () {
 
     var TodoRouter = Backbone.Router.extend({
     routes: {
-      '': 'index'
+      '': 'index',
+      'contacts': 'contacts',
+      'contacts/new': 'newContact'
     },
 
     index: function () {
@@ -17,8 +19,13 @@ $(function () {
           model: {}
          }).render().el);
 
-
       console.log('Index processingy')
+    },
+    contacts: function () {
+      var contactsModel = new BackboneLabs.Models.Contacts();
+      $("#mainContainer").html(new BackboneLabs.Views.Contacts({
+          model: contactsModel
+      }).render().el);
     }
   });
 

@@ -35,16 +35,7 @@ BackboneLabs.Views = BackboneLabs.Views || {};
     addOne: function (todo) {
       var view = new app.TodoView({ model: todo });
       this.$list.append(view.render().el);
-    },
-
-    // Add all items in the **Todos** collection at once.
-    addAll: function () {
-      this.$list.html('');
-      app.todos.each(this.addOne, this);
-    },
-
-    filterOne: function (todo) {
-      todo.trigger('visible');
-    },
+    }
+    
   });
 })(jQuery);

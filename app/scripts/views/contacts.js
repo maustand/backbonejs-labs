@@ -9,20 +9,19 @@ BackboneLabs.Views = BackboneLabs.Views || {};
 
     template: JST['app/scripts/templates/contacts.ejs'],
 
-    tagName: 'div',
-
-    id: '',
-
-    className: '',
-
-    events: {},
+    events: {
+      'click .addnewContact': 'addNewContact',
+    },
 
     initialize: function () {
-      this.listenTo(this.model, 'change', this.render);
     },
 
     render: function () {
-      this.$el.html(this.template(this.model.toJSON()));
+      this.$el.append(this.template);
+      return this;
+    },
+    addNewContact: function () {
+      console.log("sdadasd");
     }
 
   });

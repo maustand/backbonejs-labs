@@ -5,21 +5,21 @@ BackboneLabs.Models = BackboneLabs.Models || {};
 (function () {
   'use strict';
 
-    app.Contacts = Backbone.Model.extend({
+    BackboneLabs.Models.Contacts = Backbone.Model.extend({
 
     url: '',
 
     initialize: function() {
       this.validators.name = function (value) {
-            return value.length > 0 ? {isValid: true} : {isValid: false, message: "You must enter a name"};
+            return value.length > 0 ? {isValid: true} : {isValid: false, message: 'You must enter a name'};
       };
     },
 
     defaults: {
-        name: "",
-        email: "",
-        phoneNumber: 0000
-        description: ""
+        name: '',
+        email: '',
+        phoneNumber: '',
+        comments: ''
     },
 
     validate: function(attrs, options) {
