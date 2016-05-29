@@ -26,6 +26,13 @@ $(function () {
       $("#mainContainer").html(new BackboneLabs.Views.Contacts({
           model: contactsModel
       }).render().el);
+    },
+    newContact: function () {
+      console.log('entr NewContacto')
+      var contactsModel = new BackboneLabs.Models.Contacts();
+      $("#mainContainer").html(new BackboneLabs.Views.NewContact({
+          model: contactsModel
+      }).render().el);
     }
   });
 

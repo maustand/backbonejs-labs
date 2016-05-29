@@ -21,7 +21,7 @@ BackboneLabs.Views = BackboneLabs.Views || {};
       return this;
     },
     addNewContact: function () {
-      console.log("sdadasd");
+      BackboneLabs.TodoRouter.navigate('contacts/new', {trigger: true});
     }
 
   });

@@ -10,9 +10,9 @@ BackboneLabs.Models = BackboneLabs.Models || {};
     url: '',
 
     initialize: function() {
-      this.validators.name = function (value) {
-            return value.length > 0 ? {isValid: true} : {isValid: false, message: 'You must enter a name'};
-      };
+      // this.validators.name = function (value) {
+      //       return value.length > 0 ? {isValid: true} : {isValid: false, message: 'You must enter a name'};
+      // };
     },
 
     defaults: {
