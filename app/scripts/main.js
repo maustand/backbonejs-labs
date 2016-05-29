@@ -1,18 +1,30 @@
-/*global appbbonelabs, $*/
+/*global $ */
+/*jshint unused:false */
+var BackboneLabs = BackboneLabs || {};
 
-
-window.appbbonelabs = {
-  Models: {},
-  Collections: {},
-  Views: {},
-  Routers: {},
-  init: function () {
-    'use strict';
-    console.log('Hello from Backbone!');
-  }
-};
-
-$(document).ready(function () {
+$(function () {
   'use strict';
-  appbbonelabs.init();
+
+
+    var TodoRouter = Backbone.Router.extend({
+    routes: {
+      '': 'index'
+    },
+
+    index: function () {
+
+      $("#mainContainer").html(new BackboneLabs.Views.Index({
+          model: {}
+         }).render().el);
+
+
+      console.log('Index processingy')
+    }
+  });
+
+  BackboneLabs.TodoRouter = new TodoRouter();
+  Backbone.history.start();
+
+  // kick things off by creating the `App`
+  
 });
