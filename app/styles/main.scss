@@ -3,8 +3,12 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/assets/fonts/bootstr
 @import 'bootstrap-sass-official/assets/stylesheets/bootstrap.scss';
 
 
- .toolBar-Space { 
+ .toolBar-Space  { 
   margin-bottom: 15px; 
+}
+
+.table-over-cursor tbody tr {
+  cursor: pointer;
 }
 
 .browsehappy {

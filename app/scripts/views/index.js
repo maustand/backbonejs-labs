@@ -28,13 +28,6 @@ BackboneLabs.Views = BackboneLabs.Views || {};
     render: function () {
       this.$el.append(this.template);
       return this;
-    },
-
-    // Add a single todo item to the list by creating a view for it, and
-    // appending its element to the `<ul>`.
-    addOne: function (todo) {
-      var view = new app.TodoView({ model: todo });
-      this.$list.append(view.render().el);
     }
     
   });

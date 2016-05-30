@@ -16,6 +16,7 @@ BackboneLabs.Models = BackboneLabs.Models || {};
     },
 
     defaults: {
+        id: '',
         name: '',
         email: '',
         phoneNumber: '',

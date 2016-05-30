@@ -2,57 +2,25 @@
 <div class="row">
 	<div class="col-sm-12 col-md-12 col-lg-12">
 
-		<!-- <form class="form-horizontal">
-
-			<fieldset>
-
-				<legend>New Details</legend>
-				<br>
-
-				<div class="control-group">
-					<label for="name" class="control-label">Name:</label>
-
-					<div class="controls">
-						<input type="text" id="name" name="name" value="">
-						<span class="help-inline"></span>
-					</div>
-				</div>
-
-				<div class="control-group">
-					<label for="description" class="control-label">Notes:</label>
-
-					<div class="controls">
-						<textarea id="description" name="description" class="span6" rows="6"></textarea>
-					</div>
-				</div>
-
-			</fieldset>
-
-			<div class="form-actions">
-				<a href="#" class="btn btn-primary save">Save</a>
-			</div>
-
-		</form> -->
-
 
 		<form>
 			<div class="form-group">
 				<label for="txtName">Full Name</label>
-				<input type="text" class="form-control" id="txtName" placeholder="Contacts name">
+				<input type="text" class="form-control" id="txtName" placeholder="Contacts name"  value="<%= data.name %>">
 			</div>
 			<div class="form-group">
 				<label for="txtEmail">Email address</label>
-				<input type="email" class="form-control" id="txtEmail" placeholder="Email">
+				<input type="text" class="form-control" id="txtEmail" placeholder="Email"   value="<%= data.email %>">
 			</div>
 			<div class="form-group">
 				<label for="txtPhoneNumber">Phone Number</label>
-				<input type="number" class="form-control" id="txtPhoneNumber" placeholder="Phone Number">
+				<input type="text" class="form-control" id="txtPhoneNumber" placeholder="Phone Number" value="<%= data.phoneNumber %>">
 			</div>
 			<div class="form-group">
 				<label for="txtComments">Comment</label>
-				<textarea class="form-control" rows="3" id="txtComments"></textarea>
+				<textarea class="form-control" rows="3" id="txtComments"><%= data.comments %></textarea>
 			</div>
-			<button type="submit" class="btn btn-primary save">Save</button>
+			<button  class="btn btn-primary save">Save</button>
 		</form>
 
 	</div>  

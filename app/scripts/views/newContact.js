@@ -1,5 +1,3 @@
-/*global BackboneLabs, Backbone, JST*/
-
 BackboneLabs.Views = BackboneLabs.Views || {};
 
 (function () {
@@ -7,15 +5,33 @@ BackboneLabs.Views = BackboneLabs.Views || {};
 
   BackboneLabs.Views.NewContact = Backbone.View.extend({
 
-    template: JST['app/scripts/templates/newContact.ejs'],
-    events: {},
+    template: function(){
+      return JST['app/scripts/templates/newContact.ejs']({});
+    },
+    events: {
+       'click button.save': 'new',
+    },
     initialize: function () {
-      //this.listenTo(this.model, 'change', this.render);
     },
 
     render: function () {
-      this.$el.append(this.template);
+      this.$el.append(this.template());
       return this;
+    },
+    new: function () {
+
+      var myCollection = new BackboneLabs.Collections.Contacts();
+      var model = new BackboneLabs.Models.Contacts({
+        id: generateUUID(),
+        name: $('#txtName').val(),
+        email: $('#txtEmail').val(),
+        phoneNumber: $('#txtPhoneNumber').val(),
+        comments: $('#txtComments').val() 
+      });
+
+      $.when( myCollection.save(model) ).done(function() {
+        BackboneLabs.TodoRouter.navigate('contacts', {trigger: true});
+      });
     }
 
   });

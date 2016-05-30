@@ -6,8 +6,17 @@ BackboneLabs.Collections = BackboneLabs.Collections || {};
   'use strict';
 
   BackboneLabs.Collections.Contacts = Backbone.Collection.extend({
-
-    model: BackboneLabs.Models.Contacts
+    model: BackboneLabs.Models.Contacts,
+    initialize: function(){
+        this.bind('save', this.save, this);
+        this.bind('find', this.find, this);
+    },
+    save: function(model){
+    	localStorage.setItem( 'contact' + model.id, JSON.stringify(model) );
+    },
+    find: function(id) {
+    	return JSON.parse( localStorage.getItem( 'contact' + id));
+    }
 
   });
 

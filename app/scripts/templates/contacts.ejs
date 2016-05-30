@@ -11,7 +11,7 @@
 
  <div class="row">
 
- 	<table class="table">
+ 	<table class="table table-hover table-over-cursor">
  		<thead>
  			<tr>
  				<th>Name</th>
@@ -21,18 +21,16 @@
  			</tr>
  		</thead>
  		<tbody>
- 			<tr>
- 				<td>John</td>
- 				<td>Doe</td>
- 				<td>john@example.com</td>
- 				<td>sadsdasdasdasdasdsas.com</td>
- 			</tr>
- 			<tr>
- 				<td>John</td>
- 				<td>Doe</td>
- 				<td>john@example.com</td>
- 				<td>sadsdasdasdasdasdsas.com</td>
- 			</tr>
+ 			<% _.each(data, function(row) { %>
+	 			<tr data-id="${row.id}">
+	 				<td><%= row.name %> </td>
+	 				<td><%= row.email %> </td>
+	 				<td><%= row.phoneNumber %> </td>
+	 				<td><%= row.comments %> </td>
+	 			</tr>
+	 			<tr>
+ 			<% }); %>
+
  		</tbody>
  	</table>
  </div>
